@@ -1,4 +1,4 @@
-const derekMovie =
+const movies =
   [
     {
       "id": "25997e12-3598-4e02-be16-c0ca94f9ee7f",
@@ -60,7 +60,7 @@ const derekMovie =
     }
   ]
 
-const nathanielMovie =
+const nathanielMovies =
   [
     {
       "id": "591daa26-5b72-4dd3-95a8-2f1639db3a0d",
@@ -75,8 +75,13 @@ const nathanielMovie =
       "rating": 3
     }
   ]
+const derekMovies = movies
+
+const actorList = ["Bill Tyler", "Derek Day", "Ricky Hunter", "Nathaniel Hart",]
 
 module.exports = {
-  derekMovie,
-  nathanielMovie
+  derekMovies,
+  nathanielMovies,
+  movies,
+  actorList
 }
