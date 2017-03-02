@@ -23,3 +23,23 @@ describe('filter Movies', function () {
     expect(filteredMovieList).toEqual([])
   })
 })
+
+describe(' get movie List', function () {
+  it('should return a movie list when valid url is passed', function (done) {
+    helperFunction.getMovieSet('https://movie-api-atlrumqzze.now.sh/movies-ref')
+      .then((data) => {
+        expect(data).toBeInstanceOf(Object)
+        done()
+      })
+      .catch((error) => {
+        console.log(error);
+        done()
+      })
+  })
+  it('should return a error list when invalid url is passed', function () {
+    helperFunction.getMovieSet('https://movie-api-atlrumqzfze.now.sh/movies-ref')
+      .then((data) => {
+        expect(data).toEqual('Error')
+      })
+  })
+})

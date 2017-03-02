@@ -1,10 +1,12 @@
 const axiosCall = require('./callAPI.js')
 
-function getMovieSet() {
-  console.log('in helper function');
-  return axiosCall.getMoviesApiCall()
+function getMovieSet(apiUrl) {
+  return axiosCall.getMoviesApiCall(apiUrl)
     .then((data) => {
       return data
+    })
+    .catch((error) => {
+      return error
     })
 }
 
