@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
 
 class FilterByActor extends Component {
-  selectActor() {
-    this.props.getActor('Bill Tyler')
+  selectActor(e) {
+    this.props.getActor(e.target.value)
   }
   render() {
+    const actorListDom = this.props.actorList.map((actor) => {
+      return <option key={actor} value={actor}>{actor.toUpperCase()}</option>
+    })
     return (
       <div className="component">
-        <button onClick={this.selectActor.bind(this)}>get movie of Bill Tyler</button>
+        Filter By Actor :
+        <select name="choose-actor" className="choose-actor" onChange={this.selectActor.bind(this)} >
+          <option value='all'>ALL</option>
+          {actorListDom}
+        </select>
       </div>
     );
   }

@@ -19,10 +19,15 @@ class App extends Component {
     this.setState({ actor: actorName })
   }
   render() {
+    const actorList = helperFunction.getActors(this.state.movies)
     return (
       <div className="App">
-        {this.state.actor}
-        <FilterByActor movies={this.state.movies} getActor={this.selectActor.bind(this)} />
+        <h1 className="heading"> THIS WEEK MOVIES </h1>
+        <FilterByActor
+          movies={this.state.movies}
+          actorList={actorList}
+          getActor={this.selectActor.bind(this)} />
+
         <MovieList movies={this.state.movies} selectedActor={this.state.actor} />
       </div>
     );

@@ -20,7 +20,19 @@ function filterMovieList(movies, selectedActor) {
     return isActorPresent
   })
 }
+function getActors(movies) {
+  const actorList = []
+  movies.forEach((movie) => {
+    movie.actors.forEach((actor) => {
+      if (actorList.includes(actor));
+      else
+        actorList.push(actor)
+    })
+  })
+  return actorList
+}
 module.exports = {
   getMovieSet,
-  filterMovieList
+  filterMovieList,
+  getActors
 }
